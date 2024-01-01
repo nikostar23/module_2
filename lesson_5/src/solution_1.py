@@ -1,6 +1,8 @@
-name_1: str = "Logomachine"
-name_2: str = "ArtSpace"
-name_3: str = "Designify"
-print(name_1[5:-1]+name_1[-1]+name_1[:5])
-print(name_2[4:-1]+name_2[-1]+name_2[:4])
-print(name_3[4:-1]+name_3[-1]+name_3[:4])
+def swap_parts(word: str) -> None:
+    index_of_middle = len(word) // 2
+    print(word[index_of_middle:] + word[:index_of_middle])
+    
+    
+swap_parts("Logomachine")
+swap_parts("ArtSpace")
+swap_parts("Designify")
