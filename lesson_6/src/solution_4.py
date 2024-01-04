@@ -1,4 +1,8 @@
-name_workers: list[str] = ["Алекс", "Боб", "Сьюзи",]
-print(len(name_workers))
-name_workers: list[str] = ["Сара", "Майкл",]
-print(len(name_workers))
+def get_workers(name_workers: list) -> None:
+    return f"Всего сотрудников: {len(name_workers)}"
+    
+    
+print(get_workers(["Алекс", "Боб", "Сьюзи"]))
+
+print(get_workers(["Сара", "Майкл",]))
+

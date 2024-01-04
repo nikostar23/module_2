@@ -1,33 +1,12 @@
-price_products: list[int] = [10, 30, 40, 50]
-a = max(price_products)
-b = min(price_products)
-n = len(price_products)
-t1 = 0
-t2 = 0
-for i in range(n):
-    if price_products[i] == a:
-       t1 = i
-    if price_products[i] == b:
-       t2 = i
-tepm = price_products[t1]
-price_products[t1] = price_products[t2]
-price_products[t2] = tepm
-          
-print(price_products)
+def get_items(price_products: list) -> None:
+    max_price = price_products.index(max(price_products))
+    min_price = price_products.index(min(price_products))
+    price_products[max_price], price_products[min_price] = min(price_products), max(price_products)
+    
+    return f"Новые цены: {(price_products)}"
+    
+    
+print(get_items([10, 30, 40, 50]))
 
-price_products: list[int] = [5, 10, 15, 25, 20]
-a = max(price_products)
-b = min(price_products)
-n = len(price_products)
-t1 = 0
-t2 = 0
-for i in range(n):
-    if price_products[i] == a:
-       t1 = i
-    if price_products[i] == b:
-       t2 = i
-tepm = price_products[t1]
-price_products[t1] = price_products[t2]
-price_products[t2] = tepm
-          
-print(price_products)
+print(get_items([5, 10, 15, 25, 20]))
+

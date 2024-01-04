@@ -1,3 +1,4 @@
-price_products: list[int] = [10, 20, 30, 40, 50]
+price_products: list[int] = [10, 30, 20, 40, 50]
+price_products.sort()
 price_products.reverse()
-print(price_products)
+print("Отсортированные цены: ", price_products)
