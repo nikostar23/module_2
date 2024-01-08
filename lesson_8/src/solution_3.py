@@ -1,5 +1,7 @@
-price_products: dict[str, int] = {'Яблоко': 100, 'Банан': 80, 'Кофе': 250, 'Чай': 150}
+def price_products(products: dict):
+    m = max(products, key=products.get)
+    n = min(products, key=products.get)
+    print('Самый дорогой: ', m, '-', products[m], 'руб.')
+    print('Самый дешевый: ', n, '-', products[n], 'руб.')
 
-m = max(price_products, key=price_products.get) # Выдаёт ключ с наибольшим значением
-
-print(m) 
+price_products({'Яблоко': 100, 'Банан': 80, 'Кофе': 250, 'Чай': 150})
