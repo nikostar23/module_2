@@ -7,6 +7,7 @@ def convert_to_hex(items: tuple[int]):
     
     c = c.replace('x', '')
     c = c.replace('0', '', 1)
+    c = c.upper()
     print('HEX: #', c)
 
 convert_to_hex((255, 0, 0))
