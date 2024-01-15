@@ -13,8 +13,8 @@ cost = [1000, 2000, 3000]
 cost = [5000, 10000, 15000]
 cost = [100, 200, 300, 400]
 cost = [50, 100]
-result = calculate_discount(cost)
-print("Выходные данные:", '. '.join(result))
+result = ', '.join(map(str, calculate_discount(cost)))
+print("Выходные данные:", result)
 
 # это можно сделать в цикле
 #def calculate_discount(cost):
