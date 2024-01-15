@@ -4,7 +4,7 @@ def calculate_discount(cost, index = 0, first_cost = None):
     if index < len(cost):
         next_cost = cost[index]
         cost_discount = first_cost * 0.1 if first_cost is not None else 0
-        new_cost = next_cost - cost_discount if first_cost is not None else next_cost
+        new_cost = int(next_cost - cost_discount if first_cost is not None else next_cost)
         cost_1.append(new_cost)
         cost_1 += calculate_discount(cost, index + 1, next_cost)
     return cost_1
@@ -14,8 +14,7 @@ cost = [5000, 10000, 15000]
 cost = [100, 200, 300, 400]
 cost = [50, 100]
 result = calculate_discount(cost)
-
-print("Выходные данные:", result)
+print("Выходные данные:", '. '.join(result))
 
 # это можно сделать в цикле
 #def calculate_discount(cost):
