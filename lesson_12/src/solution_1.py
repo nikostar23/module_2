@@ -1,20 +1,20 @@
-def collect_data(data):
-    return data
+def collect_data():                  # сбор данных
+    processed_data = process_data(data)
+    return processed_data
 
-def process_data(data):
-    midle = sum(data) / len(data)
-    return midle
 
-def summarize_data(midle):
-    print(f'Итог: Среднее значение: {midle}')
+def process_data(data):      
+    average = sum(data) / len(data)  # Вычисление среднего значения
+    summarized_data = summarize_data(average)
+    return summarized_data
 
-data_1 = collect_data([1, 2, 3, 4, 5])
-data_1 = collect_data([10, 15, 5, 20])
-midle = process_data(data_1)
-summarize_data(midle)
 
-#from typing import Callable
+def summarize_data(average):         # Создание отчета
+    summary = f"Итог: Среднее значение: {average}"
+    return summary
 
-#def process_data(func: Callable[[list], int], x = sum(data) / int(len(data))):
- #   return func(x)
+data = [1, 2, 3, 4, 5]
+data = [10, 15, 5, 20]
+result = collect_data()
+print(result)
 
