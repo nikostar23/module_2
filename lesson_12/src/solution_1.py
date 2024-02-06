@@ -1,17 +1,14 @@
 def collect_data():                  # сбор данных
-    processed_data = process_data(data)
-    return processed_data
-
+    return process_data(data)
+    
+import statistics
 
 def process_data(data):      
-    average = sum(data) / len(data)  # Вычисление среднего значения
-    summarized_data = summarize_data(average)
-    return summarized_data
-
+    average = statistics.mean(data)  # Вычисление среднего значения
+    return summarize_data(average)
 
 def summarize_data(average):         # Создание отчета
-    summary = f"Итог: Среднее значение: {average}"
-    return summary
+    return f"Итог: Среднее значение: {average}"
 
 data = [1, 2, 3, 4, 5]
 data = [10, 15, 5, 20]

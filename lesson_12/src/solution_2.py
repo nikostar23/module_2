@@ -7,9 +7,9 @@ def check_order(check: dict):
 def package_order(check):  
     return f"Отправка: Упакован заказ {check.get('id')}"
 
-def send_order(check_function, package_function, check: dict):
+def send_order(check_function, package_order, check: dict):
     if check_function(check):
-        return f"Отправка: Упакован заказ {check.get('id')}"   
+        return package_order(check)
     else:
         return f"Отправка: Заказ {check.get('id')} пуст"
 
