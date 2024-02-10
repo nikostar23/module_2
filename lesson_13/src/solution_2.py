@@ -1,17 +1,21 @@
-data_1 = ['Логотип Васильевский рынок']
-data_2 = ['Макет сайта Логомашины']
+import time
 
 def my_decorator(func):
-    def wrapper():
-        func()
-        if data_1:
-            print('Executions: 2,45 seconds')
-        if data_2:
-            print('Executions: 4,30 seconds')
-    return wrapper()
+    def wrapper(data):
+        start = time.time()
+        func(data)
+        end = time.time()
+        print(f'Executions: {end - start} seconds')
+        
+    return wrapper
 
 @my_decorator
-def create_design() -> None:
+def create_design(data):
+    if data == 'Логотип Васильевский рынок':
+        time.sleep(2.45)
+    elif data == 'Макет сайта Логомашины':
+        time.sleep(4.30)
     pass
 
-create_design()
+create_design('Логотип Васильевский рынок')
+create_design('Макет сайта Логомашины')

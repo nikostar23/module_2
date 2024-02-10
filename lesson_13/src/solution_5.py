@@ -1,17 +1,15 @@
-data_1 = ['Роман', 'correctpassword']
-data_2 = ['Олег', 'wronqpassword']
-
 def my_decorator(func):
-    def wrapper():
-        if data_1:
+    def wrapper(data):
+        if data == ('Роман', 'correctpassword'):
             print('Доступ получен. Данные:...')
-        if data_2:
+        elif data == ('Олег', 'wronqpassword'):
             print('В доступе отказано!')
         func()
-    return wrapper()
+    return wrapper
 
 @my_decorator
 def access_client_data() -> None:
     pass
 
-access_client_data()
+access_client_data(('Роман', 'correctpassword'))
+access_client_data(('Олег', 'wronqpassword'))

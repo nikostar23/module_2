@@ -1,9 +1,5 @@
-data = ('Вэб-сайт', 'пять')
-data = ('Визитка', 10)
-data = ('Визитка', 10, 20)
-
 def my_decorator(func):
-    def wrapper():
+    def wrapper(data):
         if len(data) == 2:
             if isinstance(data[0], str) and isinstance(data[1], int):
                 print('Estimated time calculated successfully')
@@ -20,4 +16,6 @@ def my_decorator(func):
 def estimate_time() -> None:
     pass
 
-estimate_time()
+estimate_time(('Вэб-сайт', 'пять'))
+estimate_time(('Визитка', 10))
+estimate_time(('Визитка', 10, 20))
