@@ -35,4 +35,4 @@ while row_start <= row_end and col_start <= col_end:
         col_start += 1
 
 for row in a:
-    print(' '.join([str(elem) for elem in row]))
+    print('\t'.join(map(str, row)))
