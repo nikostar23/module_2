@@ -34,5 +34,10 @@ while row_start <= row_end and col_start <= col_end:
             current_num += 1
         col_start += 1
 
+#for row in a:
+#    print('\t'.join(map(str, row)))
+
+k = n ^ 2
 for row in a:
-    print('\t'.join(map(str, row)))
+    format_row = [str(num).rjust(k) for num in row]
+    print("".join(format_row))
