@@ -37,7 +37,7 @@ while row_start <= row_end and col_start <= col_end:
 #for row in a:
 #    print('\t'.join(map(str, row)))
 
-k = n ^ 2
+k = len(str(n ^ 2)) + 2  # Находим самый длинный элемент в матрице
 for row in a:
     format_row = [str(num).rjust(k) for num in row]
-    print("".join(format_row))
+    print(" ".join(format_row))
