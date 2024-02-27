@@ -1,21 +1,19 @@
-def binary_find_element(data: list, num):
-    a = data[0]
-    b = data[-1]
-    c = len(data) // 2
+def binary_find_element(data: list, num) -> bool:
+    low = 0
+    high = len(data) - 1
     
-    if num == data[c]:
-        print(True)
-    if num < data[c]:
-        for _ in range(c):
-            c = c // 2
-        if num == data[c]:
-            print(True)
-    if num > data[c]:
-        for _ in range(c, len(data)):
-            c = (len(data) + c) // 2
-            if num == data[c]:
-                print(True)
-    else:
-        print(False)
+    while low <= high:
+        mid = (low + high) // 2
+        
+        if data[mid] == num:
+            return True
+        elif data[mid] < num:
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return False
 
-binary_find_element([1, 4, 6, 7, 8], 6)
+print(binary_find_element([1, 4, 6, 7, 8], 8))
+print(binary_find_element([1, 3, 4, 6, 7, 8], 8))
+print(binary_find_element([], 8))
