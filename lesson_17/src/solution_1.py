@@ -1,9 +1,9 @@
-def find_element(data: list, num):
+def find_element(data: list, num) -> bool:
     k = 0
     for i in range(len(data)):
         if num == data[i]:
             k += 1
-    print(k != 0)
+    return k != 0
 
 
 #def find_element(data: list, num) -> bool:
@@ -13,5 +13,5 @@ def find_element(data: list, num):
 #        else:
 #            return False
 
-find_element([1, 3, 5], 6)
-find_element(['tree', 'red', 'yellow'], 'red')
+print(find_element([1, 3, 5], 6))
+print(find_element(['tree', 'red', 'yellow'], 'red'))
